@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman Game</title>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+#hangman-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  /*Add your additional styles for the hangman figure here*/
+}
+
+#word-to-guess {
+  margin-top: 20px;
+  font-size: 24px;
+  /*Add your additional styles for the word to be guessed here*/
+}
+
+#letters-guessed {
+  margin-top: 10px;
+  font-size: 18px;
+  /*Add your additional styles for the letters guessed so far here*/
+}
+
+/*Style the guess input section*/
+#guess-input {
+  margin-top: 20px;
+  /*Add your additional styles for the guess input section here*/
+}
+
+/*Style the game message section*/
+#message {
+  margin-top: 20px;
+  font-size: 24px;
+  /*Add your additional styles for the game message section here*/
+}
+</style>  
+</head>
+<body>
+  <h1>Hangman Game</h1>
+  
+  <div id="hangman-figure">
+    <!-- Display the hangman figure here -->
+  </div>
+  
+  <div id="word-to-guess">
+    <!-- Display the word to be guessed here -->
+  </div>
+  
+  <div id="letters-guessed">
+    <!-- Display the letters guessed so far here -->
+  </div>
+  
+  <div id="guess-input">
+    <label for="letter-input">Guess a letter:</label>
+    <input type="text" id="letter-input" maxlength="1">
+    <button id="guess-button">Guess</button>
+  </div>
+  
+  <div id="message">
+    <!-- Display game messages (win/lose) here -->
+  </div>
+  
+  <script>
+    // Define an array of words to be guessed
+const words = ['hangman', 'javascript', 'programming', 'web', 'developer'];
+
+// Select a random word from the array
+const randomWord = words[Math.floor(Math.random() * words.length)];
+
+// Create an array to store the correctly guessed letters
+const guessedLetters = [];
+
+// Create a variable to store the number of incorrect guesses
+let incorrectGuesses = 0;
+
+// Function to check if a letter is in the word
+function checkLetter(letter) {
+  if (randomWord.includes(letter)) {
+    // Letter is correct, add it to the guessedLetters array
+    guessedLetters.push(letter);
+    console.log('Correct guess!');
+  } else {
+    // Letter is incorrect, increment the incorrectGuesses variable
+    incorrectGuesses++;
+    console.log('Incorrect guess!');
+  }
+}
+
+// Function to check if the word has been completely guessed
+function checkWin() {
+  const wordArray = randomWord.split('');
+  const correctLetters = wordArray.filter(letter => guessedLetters.includes(letter));
+  
+  if (correctLetters.length === wordArray.length) {
+    console.log('You win!');
+  }
+}
+
+// Example usage
+  checkLetter('a');
+  checkLetter('b');
+  checkLetter('c');
+  checkLetter('d');
+  checkWin();
+  </script>
+</body>
+</html>
