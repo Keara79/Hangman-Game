@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f1f1;
+}
+
+#hangman-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  /*Add your additional styles for the hangman figure here*/
+}
+
+#word-to-guess {
+  margin-top: 20px;
+  font-size: 24px;
+  /*Add your additional styles for the word to be guessed here*/
+}
+
+#letters-guessed {
+  margin-top: 10px;
+  font-size: 18px;
+  /*Add your additional styles for the letters guessed so far here*/
+}
+
+/*Style the guess input section*/
+#guess-input {
+  margin-top: 20px;
+  /*Add your additional styles for the guess input section here*/
+}
+
+/*Style the game message section*/
+#message {
+  margin-top: 20px;
+  font-size: 24px;
+  /*Add your additional styles for the game message section here*/
+}
