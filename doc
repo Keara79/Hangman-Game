@@ -1,0 +1,6 @@
+feat: Add hangman game
+
+This commit adds a hangman game to the project. The game allows users to guess letters to uncover a hidden word. 
+It includes a word bank of various categories and difficulty levels. 
+Users can track their progress and see how many guesses they have left. 
+The hangman game provides an interactive and entertaining experience.
